@@ -11,20 +11,20 @@
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-	var danmuView: XDanMuView = XDanMuView()
-	danmuView.frame = .init(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height - 200)
-	self.view.addSubview(danmuView)
+    var danmuView: XDanMuView = XDanMuView()
+    danmuView.frame = .init(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height - 200)
+    self.view.addSubview(danmuView)
 
-	// 配置项
+    // 配置项
     danmuView.minSpeed = 1
     danmuView.maxSpeed = 2
     danmuView.gap = 20
     danmuView.lineHeight = 30
 
-	// 启动弹幕
-	danmuView.start()
-	// 启动一个定时器灌弹幕
-	timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(addDanMu), userInfo: nil, repeats: false)
+    // 启动弹幕
+    danmuView.start()
+    // 启动一个定时器灌弹幕
+    timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(addDanMu), userInfo: nil, repeats: false)
 }
 
 @objc func addDanMu() {
